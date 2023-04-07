@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var tela = document.querySelector('canvas'); // joguei o canvas para o meu mundo javascript.
+        var pincel = tela.getContext('2d'); //pedindo um pincel para desenhar 2d.
+
+        pincel.fillStyle = 'lightgrey'; //qual a cor que vou usar
+        pincel.fillRect(0, 0, 600, 400); //Ou seja, estamos pedindo ao JavaScript para preencher um retângulo. O fillRect() precisa de algumas informações para conseguir desenhar o retângulo, que estarão na ordem: posição inicial X do “pincel”, posição inicial Y do “pincel”, posição final X do “pincel”, posição final Y do “pincel”.
+
+        pincel.fillStyle = 'green';
+        pincel.fillRect(0, 0, 200, 400);
+
+        pincel.fillStyle = 'red';
+        pincel.fillRect(400, 0, 200, 400);
+
+        pincel.fillStyle = 'yellow';
+        pincel.beginPath(); // começar o caminho, qual o caminho que o pincel vai seguir para desenhar.
+        pincel.moveTo(300, 200); // tenho que mover meu pincel, dizer para que ponto ele vai. 300 nesse caso é meio do x e 200 o meio do y. Centralizei meu pincel no meio.
+        pincel.lineTo(200, 400); // fazer uma linha até uma posição. Vai até aquele ponto que eu indiquei. x valendo 200, e y 400.
+        pincel.lineTo(400, 400);
+        pincel.fill(); // vai preencher com a cor amarela pra mim.
+
+    </script>
+</body>
+</html>
