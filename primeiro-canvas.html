@@ -12,6 +12,8 @@
         var tela = document.querySelector('canvas'); // joguei o canvas para o meu mundo javascript.
         var pincel = tela.getContext('2d'); //pedindo um pincel para desenhar 2d.
 
+        //criar um retângulo.
+
         pincel.fillStyle = 'lightgrey'; //qual a cor que vou usar
         pincel.fillRect(0, 0, 600, 400); //Ou seja, estamos pedindo ao JavaScript para preencher um retângulo. O fillRect() precisa de algumas informações para conseguir desenhar o retângulo, que estarão na ordem: posição inicial X do “pincel”, posição inicial Y do “pincel”, posição final X do “pincel”, posição final Y do “pincel”.
 
@@ -21,13 +23,22 @@
         pincel.fillStyle = 'red';
         pincel.fillRect(400, 0, 200, 400);
 
-        pincel.fillStyle = 'yellow';
+        //criar um triângulo.
+
+        pincel.fillStyle = 'blue';
         pincel.beginPath(); // começar o caminho, qual o caminho que o pincel vai seguir para desenhar.
         pincel.moveTo(300, 200); // tenho que mover meu pincel, dizer para que ponto ele vai. 300 nesse caso é meio do x e 200 o meio do y. Centralizei meu pincel no meio.
         pincel.lineTo(200, 400); // fazer uma linha até uma posição. Vai até aquele ponto que eu indiquei. x valendo 200, e y 400.
         pincel.lineTo(400, 400);
         pincel.fill(); // vai preencher com a cor amarela pra mim.
 
+        //criar uma bola
+
+        pincel.fillStyle = 'purple';
+        pincel.beginPath(); //começar outro novo caminho, pq senão vai seguir o anterior.
+        pincel.arc(300, 200, 50, 0, 2 * 3.14); // para traçar o meu círculo. Posiciono meu pincel lá q vai ser o centro do meu círculo. 300 para x e 200 para y - fica no começo do triângulo. 50 - tamanho do raio. 0 - angulo inicial, 2 * 3.14 - ângulo final em radiandos.
+        pincel.fill();
+        
     </script>
 </body>
 </html>
