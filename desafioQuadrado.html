@@ -15,10 +15,28 @@
 
             pincel.fillStyle = cor;
             pincel.fillRect(x, y, tamanho, tamanho);
-
+            pincel.fillStroke = 'black';
+            pincel.strokeRect(x, y, tamanho, tamanho);
         }
 
-        desenhaQuadro(0, 0, 200, 'green');
+        function desenhaTexto(texto, x , y) {
+            var tela = document.querySelector('canvas');
+            var pincel = tela.getContext('2d');
+
+            pincel.font='20px Georgia';
+            pincel.fillStyle='black';
+            pincel.fillText(texto, x, y);    
+        }
+
+
+        desenhaTexto("Qual é a fração?", 30, 30);
+
+        var y = 50;
+
+        desenhaQuadro(0, y, 50, 'green');
+        desenhaQuadro(50, y, 50, 'green');
+        desenhaQuadro(100, y, 50, 'green');
+        desenhaQuadro(150, y, 50, 'white');
     </script>
 </body>
 </html>
