@@ -20,8 +20,15 @@
             var x = evento.pageX - tela.offsetLeft;
             var y = evento.pageY - tela.offsetTop;
             console.log(x + ',' + y);
-            if (evento.shiftKey) {
-                raio = raio + 10;
+            if (evento.shiftKey && evento.altKey) {
+
+                alert('Só aperte uma tecla por vez, por favor!');
+            } 
+            else if (evento.shiftKey && raio + 10 <= 40) {
+                raio += 10;
+            }
+            else if (evento.altKey && raio - 5 >= 10) {
+                raio -= 5;
             }
             pincel.fillStyle = 'blue';
             pincel.beginPath();
