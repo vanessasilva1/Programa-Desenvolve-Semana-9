@@ -26,13 +26,21 @@
         }
 
         var x = 20;
+        var sentido = 1;
+
         function atualizaTela() {
             limpaTela();
+            if (x > 600) {
+                sentido = -1;
+            } 
+            else if (x < 0) {
+                sentido = 1; /*E else if (x < 0) , diz que senão ( senão por que? Porque só existem duas condições para o X receber valor inverso, ou é ultrapassando 600, ou é ultrapassando zero), */
+            }
             desenhaCirculo(x, 20, 10);
-            x++;
+            x = x + sentido;
         }
         
-        setInterval(atualizaTela, 20); // intervalos de tempo para executar a função, nessa caso a cada 20 milisegundos.
+        setInterval(atualizaTela, 10); // intervalos de tempo para executar a função, nessa caso a cada 20 milisegundos.
         
     </script>
 </body>
